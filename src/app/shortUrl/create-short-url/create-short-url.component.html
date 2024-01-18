@@ -1,0 +1,28 @@
+<div class="container mt-4">
+
+  <div class="row">
+    <form [formGroup]="createShortUrlForm" class="col-md-6 offset-md-3" (ngSubmit)="createShortUrl()">
+      <div class="form-group">
+        <label for="url">Ingresa el URL a acortar:</label>
+        <input formControlName="url" type="text" class="form-control" id="url" placeholder="Ej. https://www.ejemplo.com">
+      </div>
+      <button class="btn btn-primary btn-block mt-3">Generar URL acortado</button>
+    </form>
+  </div>
+  
+  
+    <div class="row mt-4">
+      <div class="col-md-6 offset-md-3">
+      
+        <div class="card">
+          <div class="card-body">
+            <p>Tu URL acortada es:</p> 
+            <h3>{{ shortUrl.shortUrl }}</h3>
+            <button class="btn btn-success btn-sm" (click)="copiarUrl()">Copiar</button>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  
+  </div>

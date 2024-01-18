@@ -1,0 +1,16 @@
+<div class="container mt-4">
+    <h2>Lista de URLs Acortadas</h2>
+    <div *ngFor="let url of urls" class="card mb-2">
+      <div class="card-body">
+        <h5 class="card-title">ID: {{ url.id }}</h5>
+        <form #editForm="ngForm" (submit)="guardarCambios(url, editForm)">
+          <input type="text" name="url" [(ngModel)]="url.url" class="form-control" required>
+          <p class="card-text">UUID: {{ url.uuid }}</p>
+          <p class="card-text">URL Acortada: {{ url.shortUrl }}</p>
+          <p class="card-text">Fecha de Creación: {{ url.created | date:'medium' }}</p>
+          <button type="submit" class="btn btn-primary mr-2">Guardar Cambio</button>
+          <button type="button" class="btn btn-danger" (click)="eliminarUrl(url.id)">Eliminar</button>
+        </form>
+      </div>
+    </div>
+  </div>
